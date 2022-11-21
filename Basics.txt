@@ -1,3 +1,0 @@
-JavaScript Basics
-1. Learn about the syntax
-2. working on the clone
