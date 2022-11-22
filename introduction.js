@@ -213,4 +213,28 @@ console.log(myObj3);
  }
 
  console.log(addition(10,8,4,6,9)); // all the arguments are captured
- 
+
+// methods of array
+
+var myArray=[10,20,30,{}];
+
+console.log(myArray.length);
+console.log(myArray);
+myArray.push(100);
+console.log(myArray);
+myArray.pop();
+console.log(myArray);
+myArray.shift();
+console.log(myArray);
+myArray.unshift(10);
+console.log(myArray);
+
+var myFunction= function(item){
+    console.log("For an Element "+item);
+}
+array2=myArray.forEach(myFunction);
+console.log(Math.ceil(Math.random()*10));
+var today= new Date();
+console.log(today.getDate());
+
+// introduction part ends here
