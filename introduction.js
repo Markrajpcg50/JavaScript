@@ -110,3 +110,67 @@ console.log(myObj3);
  var greeting="Hello World";
  console.log(greeting.length);
  console.log(typeof greeting);
+
+ // creating functions in JS
+ function demo(){
+    console.log("inside function called as demo");
+ }
+
+ demo();
+
+ function demo1(name){
+    console.log("inside function called as demo and printing name as "+name);
+ }
+
+ demo1("mohan");
+ // both the time the demo with the argument is picked because in JS function overloading is not allowed
+ // change the demo with arg to demo1
+
+ // usinf return statements
+ function demo2(name, age)
+ {
+    return "Your Name is "+name+" and Age is "+age;
+ }
+
+ var returned=demo2("Mohan",26);
+ console.log(returned);
+
+ var eg= function demo4(){
+    console.log("Inside a function assigned to a varibale ");
+ }
+ eg();
+ // demo4(); this wont work and the only way to invoke the function is through the var reference
+ var eg2= function (){
+    console.log("eg2");
+ }
+ eg2();
+
+ var eg3= function(fn){
+    console.log(fn);
+ }
+ eg3(eg2);
+ console.log(eg3);
+
+ //invoking a function from a function
+
+ var vr= function (name){
+    console.log("My Name is "+name);
+ }
+ var val= function(fn,name){
+    fn(name);
+ }
+
+ val(vr,"Mohan");
+
+ // objects with function as properties
+ var myObj5 = {
+    "name":"Mohan",
+    "company":"ExaThought",
+    "work": function(name){
+        console.log(name+" is Working");
+    }
+ }
+
+ myObj5.work("Mohan");
+
+ // getters, setters and this in JavaScript
