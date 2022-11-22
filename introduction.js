@@ -174,4 +174,43 @@ console.log(myObj3);
  myObj5.work("Mohan");
 
  // getters, setters and this in JavaScript
+
+ var person={
+    "firstName":"Mohan",
+    "lastName":"Raj",
+    "getFullName": function(){
+        return this.firstName+" "+this.lastName;
+    },
+    "address": {
+        "Street":"10 JS Street",
+        "city": "Bangalore",
+        "state": "Karnataka"
+    },
+    "isFromState": function(state){
+        if(this.address.state===state)
+        {
+            return true;
+        }
+        return false;
+    }
+ };
+ var fullName=person.getFullName();
+ console.log(fullName);
+ var person2=person;
+ person={};
+ console.log(person2.getFullName());
+ console.log(person2.isFromState("karnataka"));
+ 
+ // default function arguments
+
+ var addition= function(){
+    var i,sum=0;
+    for(i=0;i<arguments.length;i++)
+    {
+        sum+=arguments[i];
+    }
+    return sum;
+ }
+
+ console.log(addition(10,8,4,6,9)); // all the arguments are captured
  
