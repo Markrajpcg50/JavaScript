@@ -63,3 +63,67 @@ console.log(foo); // read operation cannot work without declaration
 foo=10; // write operation can work without declaration
 console.log(foo); 
 
+// global scope problem
+var a=30;
+function myFn(){
+    var b=a;
+    console.log(b);
+    //console.log(c);
+    d=11; // since this was not declared during the compilation state the variable created is in the global area
+}
+
+myFn();
+console.log(d);
+
+
+var global=40;
+
+function outer(){
+    var outer=global;
+    console.log(outer);
+    function inner(){
+        var inner=outer;
+        console.log(inner);
+        var outer=50;
+    }
+    inner();
+}
+
+outer();
+console.log("************");
+console.log(value);
+var value=10;
+
+a=10;
+console.log(b);
+c++;
+var a;
+var b;
+var c;
+
+myFn1();
+
+function myFn1(){
+    console.log("AAA");
+}
+
+function fnA(){
+
+    fnB();
+} 
+
+function fnB(){
+    fnA();
+}
+
+// fnA();
+
+// strict mode
+
+function mycode(){
+"use strict";
+var myName="here";
+myname="Mohan";
+}
+
+mycode();
