@@ -162,4 +162,79 @@ function foo(){
 //--------------
 
 // Prototypes
+// all function create a prototype object
+// somewhat similar to class class object in java
+// these prototype classes can only be accesed by the object 
+//created using the function as a constructor
+function foo5() {};
+console.log(foo5);
+
+function bar(){};
+console.log(bar);
+
+console.log(foo5.prototype);
+var myObj7=new foo5();
+console.log(foo5.prototype);
+foo5.prototype.test="This is the prototype object of foo";
+console.log(foo5.prototype);
+console.log(myObj7.__proto__.test);
+console.log(foo5.prototype===myObj7.__proto__);
+
+console.log(myObj7.test);
+
+function Employee(name){this.name=name;}
+
+var emp1=new Employee("Mohan");
+var emp2=new Employee("Ruban");
+Employee.prototype.playPranks= function(){
+    console.log("Prank Played");
+}
+
+Employee.prototype.playPranks();
+emp1.playPranks();
+emp2.playPranks();
+
+var emp3= new Employee("Ram");
+emp3.playPranks();
+
+// dunder proto
+
+var proto= foo.prototype;
+
+console.log(proto.constructor);
+
+foo.__proto__.constructor= function(){}
+
+// Object Function object
+
+var simple ={};
+var obj12=new Object();
+console.log(simple);
+console.log(obj12);
+console.log(Object.prototype);
+console.log(obj12.__proto__);
+console.log(simple.__proto__);
+console.log(obj12.__proto__===simple.__proto__);
+
+
+function Employee1() {};
+
+var emp4= new Employee1();
+
+emp4.prop="Employee";
+console.log(emp4.prop);
+
+emp4.__proto__.parentproto="Parent of Employee"
+console.log(emp4.parentproto)
+
+emp1.__proto__.__proto__.grandParentProto="GrandParent of Employee";
+console.log(emp4.grandParentProto)
+
+
+function fee(){}
+var temp= new fee();
+console.log(temp.__proto__.grandParentProto);
+console.log(temp.__proto__.grandParentProto);
+
+// Inheritance in js
 
