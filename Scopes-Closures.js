@@ -94,6 +94,7 @@ console.log("************");
 console.log(value);
 var value=10;
 
+// Hoisting
 a=10;
 console.log(b);
 c++;
@@ -123,7 +124,67 @@ function fnB(){
 function mycode(){
 "use strict";
 var myName="here";
-myname="Mohan";
+//myname="Mohan";
 }
 
 mycode();
+
+// Closures
+
+var a=10;
+function outer(){
+    var b=20;
+    var inner= function (){
+        console.log(a);
+        console.log(b);
+    }
+    return inner;
+}
+var innerFn=outer();
+innerFn();
+// even when inner fn reference is returned only the reference is 
+// returned and hence when we execute it still executes the same 
+
+//  callback
+
+a=10;
+// wait for 1 second
+var fn= function(){
+    console.log(a);
+}
+//setTimeout(fn,1000);
+console.log("end");
+
+// closures in object with getters and setters
+var createPerson=  function(){
+    var firstName = "Mohan";
+    var lastName = "Raj K";
+    var newObj= {
+    "getFirstName": function (){
+    return firstName;
+    },
+    "getLastName": function(){
+        return lastName;
+    },
+    "setFirstName": function(fName){
+        firstName=fName;
+    },
+    "setLastName": function(lName){
+        lastName=lName;
+    }
+    }
+    return newObj
+}
+
+var person=createPerson();
+console.log(person.getFirstName());
+console.log(person.getLastName());
+
+// async in javascript and how to resolve it
+var i;
+
+for(i=0;i<10;i++){
+    (function(currentValueOfI){
+    setTimeout(function(){console.log(currentValueOfI)},1000);
+    })(i);
+}
