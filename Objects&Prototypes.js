@@ -238,3 +238,4 @@ console.log(temp.__proto__.grandParentProto);
 
 // Inheritance in js
 
+//function prototype to protoype of another function
